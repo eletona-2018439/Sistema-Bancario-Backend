@@ -6,6 +6,8 @@ const User = require('../models/user');
 const getCuentas = async (req, res) => {
   try {
     const cuentas = await Cuenta.find();
+     // Ordenar las cuentas por saldo de forma ascendente
+     cuentas.sort((a, b) => b.saldo - a.saldo);
     res.json({ msg: 'GET API de Cuentas', cuentas });
   } catch (error) {
     res.status(500).json({ error: 'Error al obtener las cuentas' });

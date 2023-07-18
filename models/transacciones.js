@@ -5,8 +5,8 @@ const transaccionSchema = Schema({
     type: String,
     required: true
   },
-  cuentaDestino: {
-    type: String,
+  cuentaDestino: {  
+    type: Number,
     required: true
   },
   monto: {
